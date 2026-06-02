@@ -96,6 +96,35 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full h-screen overflow-hidden"
     >
+      {/* Mobile Styles Wrapper to strictly isolate mobile tweaks */}
+      <style>{`
+        @media (max-width: 767px) {
+          .hero-title-mobile {
+            font-size: 16vw !important;
+            top: 15vh !important;
+          }
+          .hero-polaroids-mobile {
+            transform: scale(0.65) !important;
+            transform-origin: bottom left !important;
+            bottom: 8vh !important;
+            left: 0 !important;
+          }
+          .hero-kimono-mobile {
+            display: block !important;
+            right: -30px !important;
+            max-height: 55vh !important;
+            opacity: 0.75 !important;
+          }
+          .hero-book-btn-mobile {
+            display: block !important;
+            right: auto !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            bottom: 6vh !important;
+          }
+        }
+      `}</style>
+
       {/* Background Video */}
       <div ref={videoRef} className="absolute inset-0" style={{ zIndex: 0 }}>
         <motion.video
@@ -128,7 +157,7 @@ export default function HeroSection() {
         {/* JAPAN Title */}
         <div ref={titleRef} className="absolute inset-0 pointer-events-none">
           <motion.h1
-            className="absolute text-soft-cream font-extralight text-center uppercase select-none w-full"
+            className="absolute text-soft-cream font-extralight text-center uppercase select-none w-full hero-title-mobile"
             style={{
               y: titleY,
               willChange: 'transform',
@@ -146,7 +175,7 @@ export default function HeroSection() {
         {/* Polaroid Strip */}
         <div ref={polaroidsRef} className="absolute w-full h-full pointer-events-none">
           <motion.div
-            className="absolute flex items-end pointer-events-auto"
+            className="absolute flex items-end pointer-events-auto hero-polaroids-mobile"
             style={{
               x: polaroidsX,
               willChange: 'transform',
@@ -168,11 +197,11 @@ export default function HeroSection() {
         </div>
 
         {/* Kimono Figure */}
-        <div ref={kimonoRef} className="absolute inset-0 pointer-events-none">
+        <div ref={kimonoRef} className="absolute inset-0 pointer-events-none z-[1]">
           <img
             src="/images/hero-kimono-figure.png"
             alt="Woman in colorful kimono"
-            className="absolute hidden md:block"
+            className="absolute hidden md:block hero-kimono-mobile"
             style={{
               bottom: 0,
               right: 'clamp(40px, 8vw, 120px)',
@@ -187,7 +216,7 @@ export default function HeroSection() {
         <button
           ref={bookBtnRef}
           onClick={scrollToContacts}
-          className="absolute hidden md:block group"
+          className="absolute hidden md:block group hero-book-btn-mobile z-10"
           style={{
             bottom: 'clamp(60px, 10vh, 120px)',
             right: 'clamp(314px, 35vw, 494px)',
