@@ -10,7 +10,7 @@ interface TimelineStopProps {
 
 export default function TimelineStop({ days, city, photos, index }: TimelineStopProps) {
   const stopRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(stopRef, { threshold: 0.3, once: true });
+  const isInView = useInView(stopRef, { amount: 0.3, once: true });
 
   return (
     <motion.div

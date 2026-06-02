@@ -26,7 +26,7 @@ export default function HeroSection() {
   const videoY = useTransform(scrollYProgress, [0, 1], ['0vh', '30vh']);
   const titleY = useTransform(scrollYProgress, [0, 1], ['0vh', '50vh']);
   const polaroidsX = useTransform(scrollYProgress, [0, 1], ['0vw', '-40vw']);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const polaroidsRef = useRef<HTMLDivElement>(null);
   const kimonoRef = useRef<HTMLImageElement>(null);

@@ -62,13 +62,13 @@ const itemVariants = {
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } 
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as any } 
   },
 };
 
 export default function IncludedSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { threshold: 0.15, once: true });
+  const isInView = useInView(sectionRef, { amount: 0.15, once: true });
 
   return (
     <section
