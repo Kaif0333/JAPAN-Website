@@ -2,6 +2,8 @@
 
 Welcome to the official frontend repository for **Japan Tours**, a stunning landing page showcasing travel experiences in Japan.
 
+![Japan Tours](/public/images/contact-bg.jpg)
+
 ## 🌐 Live Website
 The website is deployed and live at:
 - **[Japan Tours Live Site](https://japan-website-work.vercel.app/)**
